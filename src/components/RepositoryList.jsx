@@ -64,6 +64,7 @@ const RepositoryList = () => {
           stars={reposData.item.stargazersCount}
           ratingAvg={reposData.item.ratingAverage}
           reviews={reposData.item.reviewCount}
+          avatar={reposData.item.ownerAvatarUrl}
         />
       )}
       keyExtractor={(item) => item.id}

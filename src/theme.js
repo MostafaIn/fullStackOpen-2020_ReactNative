@@ -5,6 +5,8 @@ const theme = {
     textPrimary: '#222',
     textSecondary: '#888',
     primary: '#0366d6',
+    error: '#d73a4a',
+    borderColor:'#333'
   },
   fontSizes: {
     body: 14,

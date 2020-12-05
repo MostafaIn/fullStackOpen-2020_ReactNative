@@ -1,14 +1,12 @@
 import React from 'react';
-import { TouchableWithoutFeedback } from 'react-native';
 import Text from './Text';
 
-const AppBarTab = () => {
+const AppBarTab = ({ tabName }) => {
   return (
-    <TouchableWithoutFeedback>
-      <Text color="textSecondary" fontWeight="bold">Repositories</Text>
-    </TouchableWithoutFeedback>
+    <Text color="textSecondary" fontWeight="bold">
+      {tabName}
+    </Text>
   );
 };
 
 export default AppBarTab;
-

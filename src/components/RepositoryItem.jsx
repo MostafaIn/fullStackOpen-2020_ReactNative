@@ -27,7 +27,7 @@ const RepositoryItem = ({
             {description}
           </Text>
           <View style={styles.language}>
-            <Text>{language}</Text>
+            <Text style={{color:'#fff'}}>{language}</Text>
           </View>
         </View>
       </View>

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-native';
 import {
   StyleSheet,
-  View,
   ScrollView,
   SafeAreaView,
   TouchableWithoutFeedback,
@@ -15,36 +14,6 @@ const AppBar = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView horizontal style={styles.scrollView}>
-        <Link to="/">
-          <TouchableWithoutFeedback>
-            <AppBarTab tabName="Repositories" />
-          </TouchableWithoutFeedback>
-        </Link>
-        <Link to="/signin">
-          <TouchableWithoutFeedback>
-            <AppBarTab tabName="Sign in" />
-          </TouchableWithoutFeedback>
-        </Link>
-        <Link to="/">
-          <TouchableWithoutFeedback>
-            <AppBarTab tabName="Repositories" />
-          </TouchableWithoutFeedback>
-        </Link>
-        <Link to="/signin">
-          <TouchableWithoutFeedback>
-            <AppBarTab tabName="Sign in" />
-          </TouchableWithoutFeedback>
-        </Link>
-        <Link to="/">
-          <TouchableWithoutFeedback>
-            <AppBarTab tabName="Repositories" />
-          </TouchableWithoutFeedback>
-        </Link>
-        <Link to="/signin">
-          <TouchableWithoutFeedback>
-            <AppBarTab tabName="Sign in" />
-          </TouchableWithoutFeedback>
-        </Link>
         <Link to="/">
           <TouchableWithoutFeedback>
             <AppBarTab tabName="Repositories" />

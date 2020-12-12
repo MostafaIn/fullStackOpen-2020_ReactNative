@@ -4,7 +4,7 @@ import Text from './Text';
 import theme from '../theme';
 
 const formatValue = (value) => {
-  if (value >= 1000) return `${Math.round((value / 1000) * 10) / 10} k`;
+  return value >= 1000 ? `${Math.round((value / 1000) * 10) / 10} k` : value;
 };
 
 const RepositoryItem = ({
@@ -27,7 +27,7 @@ const RepositoryItem = ({
             {description}
           </Text>
           <View style={styles.language}>
-            <Text style={{color:'#fff'}}>{language}</Text>
+            <Text style={{ color: '#fff' }}>{language}</Text>
           </View>
         </View>
       </View>
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   header: {
-    flex:2,
+    flex: 2,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',

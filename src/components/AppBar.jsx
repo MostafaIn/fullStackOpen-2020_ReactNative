@@ -9,8 +9,18 @@ import {
 import Constants from 'expo-constants';
 import AppBarTab from './AppBarTab';
 import theme from '../theme';
+import { useQuery } from '@apollo/react-hooks';
+import { AUTHORIZED_USER } from '../graphql/queries';
+import useSignOut from '../hooks/useSignOut';
 
 const AppBar = () => {
+  const { data } = useQuery(AUTHORIZED_USER);
+  const [signOut] = useSignOut();
+
+  console.log('data', data);
+  const handleSignOut = async () => {
+    await signOut();
+  };
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView horizontal style={styles.scrollView}>
@@ -19,11 +29,19 @@ const AppBar = () => {
             <AppBarTab tabName="Repositories" />
           </TouchableWithoutFeedback>
         </Link>
-        <Link to="/signin">
-          <TouchableWithoutFeedback>
-            <AppBarTab tabName="Sign in" />
-          </TouchableWithoutFeedback>
-        </Link>
+        {data?.authorizedUser ? (
+          <Link to="/signin" onPress={handleSignOut}>
+            <TouchableWithoutFeedback>
+              <AppBarTab tabName="Sign out" />
+            </TouchableWithoutFeedback>
+          </Link>
+        ) : (
+          <Link to="/signin">
+            <TouchableWithoutFeedback>
+              <AppBarTab tabName="Sign in" />
+            </TouchableWithoutFeedback>
+          </Link>
+        )}
       </ScrollView>
     </SafeAreaView>
   );
